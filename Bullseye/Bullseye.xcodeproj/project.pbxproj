@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96A725B62596EE4700875253 /* HighScoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A725B52596EE4700875253 /* HighScoreTableViewController.swift */; };
 		96B8E1A525950E2300AAF002 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B8E1A425950E2300AAF002 /* AboutViewController.swift */; };
 		96B8E1A82595191500AAF002 /* BullsEye.html in Resources */ = {isa = PBXBuildFile; fileRef = 96B8E1A72595191500AAF002 /* BullsEye.html */; };
 		96B8E1AC25951BC900AAF002 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B8E1AB25951BC800AAF002 /* WebKit.framework */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		96A725B52596EE4700875253 /* HighScoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreTableViewController.swift; sourceTree = "<group>"; };
 		96B8E1A425950E2300AAF002 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		96B8E1A72595191500AAF002 /* BullsEye.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = BullsEye.html; path = ../../BullsEye.html; sourceTree = "<group>"; };
 		96B8E1AB25951BC800AAF002 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -78,6 +80,7 @@
 				96E3013C2583DDB50093F01C /* ViewController.swift */,
 				96B8E1A425950E2300AAF002 /* AboutViewController.swift */,
 				96E3013E2583DDB50093F01C /* Main.storyboard */,
+				96A725B52596EE4700875253 /* HighScoreTableViewController.swift */,
 				96E301412583DDB90093F01C /* Assets.xcassets */,
 				96E301432583DDB90093F01C /* LaunchScreen.storyboard */,
 				96E301462583DDB90093F01C /* Info.plist */,
@@ -158,6 +161,7 @@
 			files = (
 				96E3013D2583DDB50093F01C /* ViewController.swift in Sources */,
 				96E301392583DDB50093F01C /* AppDelegate.swift in Sources */,
+				96A725B62596EE4700875253 /* HighScoreTableViewController.swift in Sources */,
 				96B8E1A525950E2300AAF002 /* AboutViewController.swift in Sources */,
 				96E3013B2583DDB50093F01C /* SceneDelegate.swift in Sources */,
 			);
