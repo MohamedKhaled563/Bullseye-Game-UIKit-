@@ -7,10 +7,32 @@
 
 import UIKit
 
-class HighScoreTableViewController: UITableViewController {
+class HighScoreViewController: UITableViewController {
 
+    var items = [HighScoreItem]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let item1 = HighScoreItem()
+        item1.name = "The reader of this book"
+        item1.score = 50000
+        items.append(item1)
+        let item2 = HighScoreItem()
+        item2.name = "Manda"
+        item2.score = 10000
+        items.append(item2)
+        let item3 = HighScoreItem()
+        item3.name = "Joey"
+        item3.score = 5000
+        items.append(item3)
+        let item4 = HighScoreItem()
+        item4.name = "Adam"
+        item4.score = 1000
+        items.append(item4)
+        let item5 = HighScoreItem()
+        item5.name = "Eli"
+        item5.score = 500
+        items.append(item5)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -28,7 +50,7 @@ class HighScoreTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return items.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -37,26 +59,9 @@ class HighScoreTableViewController: UITableViewController {
         let nameLabel = cell.viewWithTag(1000) as! UILabel
         let scoreLabel = cell.viewWithTag(2000) as! UILabel
         
-        switch (indexPath.row){
-        case 0:
-            nameLabel.text = "The reader of this book"
-            scoreLabel.text = "50000"
-        case 1:
-            nameLabel.text = "Manda"
-            scoreLabel.text = "10000"
-        case 2:
-            nameLabel.text = "Joey"
-            scoreLabel.text = "5000"
-        case 3:
-            nameLabel.text = "Adam"
-            scoreLabel.text = "1000"
-        case 4:
-            nameLabel.text = "Eli"
-            scoreLabel.text = "500"
-        default:
-            nameLabel.text = "None"
-            scoreLabel.text = "0"
-        }
+        let item = items[indexPath.row]
+        nameLabel.text = item.name
+        scoreLabel.text = String(item.score)
         
         return cell
         

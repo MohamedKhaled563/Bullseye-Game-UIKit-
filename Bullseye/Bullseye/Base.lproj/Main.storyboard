@@ -154,10 +154,10 @@
             </objects>
             <point key="canvasLocation" x="-192.05397301349328" y="52"/>
         </scene>
-        <!--High Score Table View Controller-->
+        <!--High Score View Controller-->
         <scene sceneID="4bu-ln-N3e">
             <objects>
-                <tableViewController id="FtP-mo-pmH" customClass="HighScoreTableViewController" customModule="Bullseye" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="FtP-mo-pmH" customClass="HighScoreViewController" customModule="Bullseye" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cfe-20-KMG">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
