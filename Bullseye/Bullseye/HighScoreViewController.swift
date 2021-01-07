@@ -9,10 +9,31 @@ import UIKit
 
 class HighScoreViewController: UITableViewController {
 
+
     var items = [HighScoreItem]()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        items = PersistencyHelper.loadHighScores()
+        if (items.count == 0){
+            resetHighscoreItems()
+        }
+        
+        print("Data path file directory: \(PersistencyHelper.dataFilePath())")
+        
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+
+    
+    
+    // MARK:- Actions
+    @IBAction func resetHighscoreItems(){
+        items.removeAll()
         let item1 = HighScoreItem()
         item1.name = "The reader of this book"
         item1.score = 50000
@@ -33,14 +54,10 @@ class HighScoreViewController: UITableViewController {
         item5.name = "Eli"
         item5.score = 500
         items.append(item5)
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        tableView.reloadData()
+        PersistencyHelper.saveHighScores(items)
     }
-
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -64,16 +81,23 @@ class HighScoreViewController: UITableViewController {
         scoreLabel.text = String(item.score)
         
         return cell
-        
-        
     }
     
-    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        items.remove(at: indexPath.row)
+        let indexPathes = [indexPath]
+        tableView.deleteRows(at: indexPathes, with: .automatic)
+        PersistencyHelper.saveHighScores(items)
+    }
+
     
     //MARK:- Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+
+    
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

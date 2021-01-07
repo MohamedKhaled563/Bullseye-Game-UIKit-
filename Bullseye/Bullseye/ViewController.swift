@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         let trackRightImage = UIImage(named: "SliderTrackRight")!
         let trackRightResizable = trackRightImage.resizableImage(withCapInsets: insets)
         slider.setMaximumTrackImage(trackRightResizable, for: .normal)
-    }
+        }
 
     func startNewRound(){
         round += 1
@@ -96,11 +96,24 @@ class ViewController: UIViewController {
     }
     
     @IBAction func startNewGame(){
+        addHighScore(score)
         score = 0
         round = 0
         startNewRound()
     }
     
+    func addHighScore(_ score: Int){
+        guard (score > 0) else{
+            return
+        }
+        let highscore = HighScoreItem()
+        highscore.name = "Unknown"
+        highscore.score = score
+        var highScores = PersistencyHelper.loadHighScores()
+        highScores.append(highscore)
+        highScores.sort(by: {$0.score > $1.score})
+        PersistencyHelper.saveHighScores(highScores)
+    }
 
     
 }

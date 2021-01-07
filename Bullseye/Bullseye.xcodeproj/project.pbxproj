@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96253F0825A3832300C9BFC5 /* PersistencyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96253F0725A3832300C9BFC5 /* PersistencyHelper.swift */; };
+		96253F0B25A6D5D400C9BFC5 /* EditHighScoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96253F0A25A6D5D400C9BFC5 /* EditHighScoreTableViewController.swift */; };
 		96A725B62596EE4700875253 /* HighScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A725B52596EE4700875253 /* HighScoreViewController.swift */; };
 		96B8E1A525950E2300AAF002 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B8E1A425950E2300AAF002 /* AboutViewController.swift */; };
 		96B8E1A82595191500AAF002 /* BullsEye.html in Resources */ = {isa = PBXBuildFile; fileRef = 96B8E1A72595191500AAF002 /* BullsEye.html */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		96253F0725A3832300C9BFC5 /* PersistencyHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistencyHelper.swift; sourceTree = "<group>"; };
+		96253F0A25A6D5D400C9BFC5 /* EditHighScoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHighScoreTableViewController.swift; sourceTree = "<group>"; };
 		96A725B52596EE4700875253 /* HighScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreViewController.swift; sourceTree = "<group>"; };
 		96B8E1A425950E2300AAF002 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		96B8E1A72595191500AAF002 /* BullsEye.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = BullsEye.html; path = ../../BullsEye.html; sourceTree = "<group>"; };
@@ -84,6 +88,8 @@
 				96E3013E2583DDB50093F01C /* Main.storyboard */,
 				96C924CF259A62FE00638AE7 /* HighScoreItem.swift */,
 				96A725B52596EE4700875253 /* HighScoreViewController.swift */,
+				96253F0A25A6D5D400C9BFC5 /* EditHighScoreTableViewController.swift */,
+				96253F0725A3832300C9BFC5 /* PersistencyHelper.swift */,
 				96E301412583DDB90093F01C /* Assets.xcassets */,
 				96E301432583DDB90093F01C /* LaunchScreen.storyboard */,
 				96E301462583DDB90093F01C /* Info.plist */,
@@ -164,6 +170,8 @@
 			files = (
 				96E3013D2583DDB50093F01C /* ViewController.swift in Sources */,
 				96C924D0259A62FE00638AE7 /* HighScoreItem.swift in Sources */,
+				96253F0B25A6D5D400C9BFC5 /* EditHighScoreTableViewController.swift in Sources */,
+				96253F0825A3832300C9BFC5 /* PersistencyHelper.swift in Sources */,
 				96E301392583DDB50093F01C /* AppDelegate.swift in Sources */,
 				96A725B62596EE4700875253 /* HighScoreViewController.swift in Sources */,
 				96B8E1A525950E2300AAF002 /* AboutViewController.swift in Sources */,
