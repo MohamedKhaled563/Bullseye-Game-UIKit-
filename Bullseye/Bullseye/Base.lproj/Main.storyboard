@@ -213,20 +213,41 @@
         <scene sceneID="qyY-ij-F9N">
             <objects>
                 <tableViewController id="a8F-Rl-A82" customClass="EditHighScoreTableViewController" customModule="Bullseye" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pc5-UT-eeR">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="pc5-UT-eeR">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="bDW-qQ-mU0">
-                                <rect key="frame" x="0.0" y="28" width="667" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bDW-qQ-mU0" id="Q4f-2G-i1o">
-                                    <rect key="frame" x="0.0" y="0.0" width="667" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <sections>
+                            <tableViewSection id="kLI-iX-WHS">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="bDW-qQ-mU0">
+                                        <rect key="frame" x="0.0" y="18" width="667" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bDW-qQ-mU0" id="Q4f-2G-i1o">
+                                            <rect key="frame" x="0.0" y="0.0" width="667" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="High scorer name " textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pej-7N-sSc">
+                                                    <rect key="frame" x="20" y="5" width="627" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <action selector="done:" destination="a8F-Rl-A82" eventType="editingDidEndOnExit" id="d4f-QH-LTS"/>
+                                                        <outlet property="delegate" destination="a8F-Rl-A82" id="W0K-i0-t3d"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Pej-7N-sSc" secondAttribute="bottom" constant="5" id="4gy-aL-xla"/>
+                                                <constraint firstAttribute="trailing" secondItem="Pej-7N-sSc" secondAttribute="trailing" constant="20" id="hoh-54-mu4"/>
+                                                <constraint firstItem="Pej-7N-sSc" firstAttribute="top" secondItem="Q4f-2G-i1o" secondAttribute="top" constant="5" id="tXd-vb-nH5"/>
+                                                <constraint firstItem="Pej-7N-sSc" firstAttribute="leading" secondItem="Q4f-2G-i1o" secondAttribute="leading" constant="20" id="zse-66-mRf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="a8F-Rl-A82" id="3iw-UM-6aD"/>
                             <outlet property="delegate" destination="a8F-Rl-A82" id="hDf-Pt-qEl"/>
@@ -244,6 +265,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="doneBarButton" destination="jRx-8x-AJX" id="B19-Pu-X4y"/>
+                        <outlet property="textField" destination="Pej-7N-sSc" id="Lbj-zq-a77"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Rf-bz-JRT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
