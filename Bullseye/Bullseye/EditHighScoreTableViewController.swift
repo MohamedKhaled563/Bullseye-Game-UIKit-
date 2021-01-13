@@ -7,9 +7,17 @@
 
 import UIKit
 
+protocol EditHighScoreViewControllerDelegate: class {
+    func editHighScoreViewControllerDidCancel(_ controller: EditHighScoreTableViewController)
+    func editHighScoreViewController(_ controller: EditHighScoreTableViewController, didFinishedEditing item: HighScoreItem)
+}
+
+
 class EditHighScoreTableViewController: UITableViewController, UITextFieldDelegate {
 
-    
+    weak var delegate: EditHighScoreViewControllerDelegate?
+    var highScoreItem: HighScoreItem!
+        
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
     
@@ -20,8 +28,7 @@ class EditHighScoreTableViewController: UITableViewController, UITextFieldDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    
+        textField.text = highScoreItem.name
     }
 
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
@@ -31,12 +38,11 @@ class EditHighScoreTableViewController: UITableViewController, UITextFieldDelega
     //MARK:- Actions
     
     @IBAction func done(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-        print("\(textField.text!)")
+        delegate?.editHighScoreViewController(self, didFinishedEditing: highScoreItem)
     }
     
     @IBAction func cancel(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+        delegate?.editHighScoreViewControllerDidCancel(self)
     }
     
     //MARK:- UITextFieldDelegate
@@ -45,7 +51,7 @@ class EditHighScoreTableViewController: UITableViewController, UITextFieldDelega
         let stringRange = Range(range, in: oldText)!
         let newText = oldText.replacingCharacters(in: stringRange, with: string)
         doneBarButton.isEnabled = !newText.isEmpty
-       
+        highScoreItem.name = newText
         return true
     }
 }
