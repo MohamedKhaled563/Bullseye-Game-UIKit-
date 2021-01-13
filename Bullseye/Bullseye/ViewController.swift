@@ -43,6 +43,14 @@ class ViewController: UIViewController {
         currentValue = 50
         slider.value = Float(currentValue)
         updataLables()
+        
+        // Adding fade animation
+        let transition = CATransition()
+        transition.type = CATransitionType.fade
+        transition.duration = 0.25
+        transition.timingFunction = CAMediaTimingFunction(name: .easeOut)
+        
+        view.layer.add(transition, forKey: nil)
     }
     
     func updataLables(){
